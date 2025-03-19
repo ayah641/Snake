@@ -4,6 +4,7 @@ const instructionText = document.getElementById("instruction-text");
 const logo = document.getElementById("logo");
 const score = document.getElementById("score");
 const highScoreText = document.getElementById("highScore");
+const dialog = document.getElementById("myDialog");
 
 // Define game variables
 const gridSize = 20;
@@ -193,7 +194,19 @@ function stopGame() {
   instructionText.style.display = "block";
   logo.style.display = "block";
 
-  alert(`Game Over \nYour Current score is ${highScore}`);
+  // alert(`Game Over \nYour Current score is ${highScore}`);
+
+  dialog.innerHTML = `
+  <p>Game Over! <br> Your Score: ${highScore}</p>
+  <button id="closeDialog">OK</button>
+`;
+
+  dialog.showModal();
+
+  // Close dialog when clicking OK
+  document.getElementById("closeDialog").addEventListener("click", () => {
+    dialog.close();
+  });
 }
 
 function updateHighScore() {

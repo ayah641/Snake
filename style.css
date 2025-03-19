@@ -85,3 +85,8 @@ body {
 #logo {
   position: absolute;
 }
+
+#myDialog {
+  border: #595f43 solid 5px;
+  border-radius: 30px;
+}
